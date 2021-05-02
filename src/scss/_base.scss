@@ -1,0 +1,75 @@
+// ! rx1310 <rx1310@inbox.ru> | Copyright (c) rx1310, 2021 | MIT License
+
+@function themeVars($key) { @return map-get($theme-map, $key); }
+
+body {
+
+  background-color: $colorBackground;
+  color: $colorFont;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  line-height: 1.15;
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbarThumb $scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%; // https://clck.ru/NNamf
+
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: $scrollbarTrack; }
+
+::-webkit-scrollbar-thumb {
+
+  background-color: $scrollbarThumb;
+  border: 4px solid $scrollbar;
+
+  @include setBorderRadius();
+
+}
+
+a {
+
+  $transition:
+    text-decoration-color .30s,
+    color .30s;
+
+  color: $COLOR-BLUE;
+  font-weight: bold;
+  text-decoration: none;
+  text-decoration-style: none;
+  -moz-text-decoration-style: none;
+
+  @include setTransition($transition);
+
+  &:hover { color: darken($COLOR-BLUE, 15%); }
+  &:active { color: darken($COLOR-BLUE, 25%); }
+
+}
+
+img {
+
+  overflow: none;
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+
+  &.round { @include setBorderRadius(100%); }
+  &.rounded { @include setBorderRadius(); }
+
+}
+
+hr {
+  background-color: $colorDivider;
+  height: 1px;
+  border: 0;
+}
+
+.row {
+  display: none !important;
+  &.current { display: flex !important; }
+}
