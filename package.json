@@ -1,4 +1,5 @@
 {
+	"private": true,
   "scripts": {
     "start": "run-p browser-sync sass:watch",
     "build": "run-s sass:compile",
