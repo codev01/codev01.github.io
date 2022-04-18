@@ -1,7 +1,5 @@
 # My workspace
 test.*
-app/../test.*
-dist/
 
 # SASS
 .sass-cache/

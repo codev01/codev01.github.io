@@ -1,9 +1,12 @@
-// ! основной файл стилей
-
-/// модули из SASS
+/// @name SASS:Modules
+/// @author SASS
+/// @link https://github.com/sass?type=source
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:string';
+@use "sass:list";
+@use "sass:meta";
+@use "sass:color";
 
 /// @name Kalium19
 /// @author Haba Kudzaev (rx1310)
@@ -12,7 +15,7 @@
 /// @param {string} $bem-element - дефолтное значение миксина `b` (BEM)
 /// @param {string} $bem-modifier - дефолтное значение миксина `e` (BEM)
 @use '../node_modules/@rx1310/kalium19' as k19 with (
-	$border-radius: 12px,
+	$border-radius: 10px,
 	$bem-element: '__',
 	$bem-modifier: '--'
 );
