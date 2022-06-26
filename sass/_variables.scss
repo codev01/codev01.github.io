@@ -1,0 +1,23 @@
+// ! Основные цвета
+$colorForeground: #e8eef2;
+$colorBackground: #ffffff;
+$colorAccent    : #006ab9;
+$colorFont      : #000000;
+$colorDivider   : #cccccc;
+
+// ! Размеры
+$sizeFont       : 1rem;
+$sizeFontLg     : $sizeFont * 1.25;
+$sizeFontSm     : $sizeFont * .875;
+$sizeFontH1     : $sizeFont * 2.5;
+$sizeFontH2     : $sizeFont * 2;
+$sizeFontH3     : $sizeFont * 1.75;
+$sizeFontH4     : $sizeFont * 1.5;
+$sizeFontH5     : $sizeFont * 1.25;
+$sizeFontH6     : $sizeFont;
+$sizeWrapper    : 90vw;
+$sizeLinkIcon   : 35px;
+
+// ! Шрифты
+$fontFamilySansSerif: 'Fira Sans', sans-serif;
+$fontFamilyMonospace: 'JetBrains Mono', monospace;

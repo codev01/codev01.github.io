@@ -1,21 +1,189 @@
-/// @name SASS:Modules
-/// @author SASS
-/// @link https://github.com/sass?type=source
+// ! Модули
 @use 'sass:math';
 @use 'sass:map';
 @use 'sass:string';
-@use "sass:list";
-@use "sass:meta";
-@use "sass:color";
-
-/// @name Kalium19
-/// @author Haba Kudzaev (rx1310)
-/// @link https://github.com/91muilak/kalium19 GitHub-репозиторий
-/// @param {string} $border-radius - дефолтное значение миксина `border-radius`
-/// @param {string} $bem-element - дефолтное значение миксина `b` (BEM)
-/// @param {string} $bem-modifier - дефолтное значение миксина `e` (BEM)
+@use 'sass:list';
+@use 'sass:meta';
+@use 'sass:color';
+@use 'variables' as var;
 @use '../node_modules/@rx1310/kalium19' as k19 with (
-	$border-radius: 10px,
 	$bem-element: '__',
 	$bem-modifier: '--'
 );
+
+// ! Стили
+
+*,
+*::before,
+*::after {
+	-webkit-touch-callout: none; // https://clck.ru/9HHvq
+}
+
+body {
+
+	background-color: var.$colorBackground;
+	color           : var.$colorFont;
+	font-family     : var.$fontFamilySansSerif;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+
+	@media (prefers-reduced-motion: no-preference) {
+		scroll-behavior: smooth;
+	}
+
+	// ? https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	// ? https://developer.mozilla.org/ru/docs/Web/CSS/user-select
+	@include k19.prefixer(
+		user-select,
+		none,
+		webkit moz ms
+	);
+
+	// ? https://clck.ru/NNamf
+	@include k19.prefixer(
+		text-size-adjust,
+		100%,
+		webkit moz ms
+	);
+
+}
+
+// * атрибут `hidden` для скрытия элемента на странице
+[hidden] {
+	@include k19.visually-hidden();
+}
+
+// * атрибут `disabled` для мута элемента на странице
+[disabled]:not([disabled="false"]) {
+
+	pointer-events: none; // https://developer.mozilla.org/ru/docs/Web/CSS/pointer-events
+	cursor: not-allowed;  // https://developer.mozilla.org/ru/docs/Web/CSS/cursor
+
+	@include k19.opacity(0.50);
+
+}
+
+a {
+
+	text-decoration: none;
+	color          : inherit;
+
+	@include k19.transition(color .3s);
+
+	&:hover { color: var.$colorAccent; }
+
+}
+
+img {
+
+	$max-size: 100%;
+
+	border-style: none;
+	overflow: none;
+	max-width: $max-size;
+	max-height: $max-size;
+	vertical-align: middle;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+}
+
+h1 { font-size: var.$sizeFontH1; }
+h2 { font-size: var.$sizeFontH2; }
+h3 { font-size: var.$sizeFontH3; }
+h4 { font-size: var.$sizeFontH4; }
+h5 { font-size: var.$sizeFontH5; }
+h6 { font-size: var.$sizeFontH6; }
+
+.wrapper {
+
+	background-color: var.$colorForeground;
+	padding: 1em 1.2em;
+  width: var.$sizeWrapper;
+	text-align: left;
+  // height: var.$sizeWrapper;
+
+	@include k19.position-absolute(50%, null, null, 50%);
+	@include k19.transform(translate(-50%, -50%));
+	@include k19.border-radius(12px);
+	@include k19.box-shadow(
+		rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+		rgba(0, 0, 0, 0.3) 0px 1px 3px -1px
+	);
+
+	@include k19.respond-to(md) {
+		width: var.$sizeWrapper / 2;
+	}
+
+}
+
+@include k19.b(header) {
+
+	@include k19.flexbox();
+	@include k19.justify-content(flex-start);
+	@include k19.align-items(center);
+
+	@include k19.e(image) {
+
+		width: 80px;
+		height: 80px;
+		margin-right: 1em;
+
+		@include k19.border-radius(12px);
+
+	}
+
+	@include k19.e(title) {
+		font-size: var.$sizeFontH4;
+		margin-bottom: 0;
+	}
+
+	@include k19.e(subtitle) {
+		margin-top: -4px;
+	}
+
+}
+
+.about {
+	// text-align: left;
+}
+
+@include k19.b(links) {
+
+	@include k19.e(icon) {
+
+		margin-right: .5em;
+
+		height: var.$sizeLinkIcon;
+		width: var.$sizeLinkIcon;
+
+		@include k19.transition(transform .3s);
+
+		&:hover,
+		&:focus,
+		&:focus-visible {
+			@include k19.prefixer(
+				transform,
+				scale(1.100),
+				ms webkit o moz
+			);
+		}
+
+		&:active {
+			@include k19.prefixer(
+				transform,
+				scale(1.050),
+				ms webkit o moz
+			);
+		}
+
+	}
+
+}

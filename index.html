@@ -16,13 +16,68 @@
 		<meta name="apple-mobile-web-app-title" content="codev01">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="theme-color" content="#ffffff">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="apple-mobile-web-app-status-bar-style" content="#ffffff">
+		<meta name="theme-color" content="#eff4f8">
+		<meta name="msapplication-TileColor" content="#eff4f8">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#eff4f8">
 		<meta name="color-scheme" content="light">
-		<title>Document</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+		<link rel="stylesheet" href="./css/main.css">
+		<!-- <link rel="stylesheet" href="./css/vendor/grid.css"> -->
+		<link rel="stylesheet" href="./css/vendor/sanitize.css">
+		<title>Rashid Hasanov (codev01)</title>
 	</head>
 	<body>
+
+		<main class="main" role="main">
+			<div class="wrapper">
+				<!-- ! Header -->
+				<div class="header">
+					<!-- ! Header Image -->
+					<img loading="lazy" decoding="async" class="header__image" src="/public/img/logo.jpeg" alt="Логотип Рашида Хасанова">
+					<div>
+						<h1 class="header__title">Rashid Hasanov</h1>
+						<p class="header__subtitle" disabled>@codev01</p>
+					</div>
+				</div>
+				<!-- ! About -->
+				<p>Как уже было написано, меня зовут Рашид Хасанов, но в сети я гуляю под никнеймом "codev01". Родился в 2001 году и живу большую часть жизни в городе <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%80%D0%B1%D0%B5%D0%BD%D1%82">Дербент</a>, что в <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B0%D0%B3%D0%B5%D1%81%D1%82%D0%B0%D0%BD">Республике Дагестан</a> (юг России).</p>
+				<p disabled>Больше информации обо мне можно изучить на моем GitHub-профиле.</p>
+				<!-- ! Links -->
+				<div class="links">
+					<a
+						style="--iconColor: #181717"
+						href="https://github.com/codev01"
+						title="Нажмите, чтобы открыть мой профиль GitHub →"
+						aria-label="Перейти в GitHub">
+						<svg class="links__icon">
+							<use xlink:href="/public/img/icons.svg#github"></use>
+						</svg>
+					</a>
+					<a
+						style="--iconColor: #26A5E4"
+						href="https://t.me/codev01"
+						title="Нажмите, чтобы написать мне в Telegram →"
+						aria-label="Перейти в Telegram">
+						<svg class="links__icon">
+							<use xlink:href="/public/img/icons.svg#telegram"></use>
+						</svg>
+					</a>
+					<a
+						style="--iconColor: #0077FF"
+						href="https://vk.com/codev01"
+						title="Нажмите, чтобы открыть мой профиль VK →"
+						aria-label="Перейти в VK">
+						<svg class="links__icon">
+							<use xlink:href="/public/img/icons.svg#vk"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</main>
 
 	</body>
 </html>
