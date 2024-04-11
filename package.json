@@ -1,0 +1,23 @@
+{
+  "name": "@codev01/my-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "run-p 11ty:serve sass:watch",
+    "build": "run-s sass:compile 11ty:build",
+    "sass:compile": "sass --no-source-map src/sass/:dist/css/ --style compressed",
+    "sass:watch": "sass --no-source-map src/sass/:dist/css/ --watch",
+    "11ty:serve": "npx @11ty/eleventy --serve --config=.eleventy.js",
+    "11ty:build": "npx @11ty/eleventy --config=.eleventy.js"
+  },
+  "author": "Haba Kudzaev (therteenten)",
+  "license": "mit",
+  "homepage": "https://github.com/codev01/codev01.github.io#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "js-yaml": "^4.1.0",
+    "npm-run-all": "^4.1.5",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.74.1"
+  }
+}

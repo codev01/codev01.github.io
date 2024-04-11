@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>{{ title }} | codev01</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="description" content="{{ description }}">
+
+        <meta name="robots" content="index,follow">
+        <meta name="googlebot" content="index,follow">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="theme-color" content="#000000">
+        <meta name="msapplication-TileColor" content="#000000">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+        <meta name="color-scheme" content="dark light">
+        <meta name="application-name" content="codev01">
+        <meta name="apple-mobile-web-app-title" content="codev01">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="/css/main.css">
+    </head>
+    <body>
+
+        {{ content | safe }}
+
+    </body>
+</html>
